@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>CONFIG_GENERATOR</title>
+		<link rel="stylesheet" href="static/bootstrap/css/tp.css"/>
+    <link rel="stylesheet" href="static/bootstrap/css/tp4.css"/>
+  </head>
+	<body>
+	<header>
+		<h1>CONFIG_GENERATO<img  src="images/logo.png"></h1>
+		
+	</header>
+		<nav>
+		<ul class="deux">
+			<li><a href="/index">ACCUEIL</a></li>
+			<li><a href="/user">utilisateurs</a></li>
+			<li><a href="/web">webserveur</a></li>
+            <li><a href="/proxy">ReverseProxy</a></li>
+			<li><a href="/Load">LoadBalancer</a></li>
+      <li><form action="{{ url_for('logout') }}" method="post">
+        <input type="submit" value="Se déconnecter">
+      </form></li>
+			
+		</nav>
+        <h1>Liste des Load Balancer</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>strategy_method</th>
+                    <th>server1_domain</th>
+                    <th>server2_domain</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in mes_user %}
+                <tr>
+                    <td>{{ user['strategy_method'] }}</td>
+                    <td>{{ user['server1_domain'] }}</td>
+                    <td>{{ user['server2_domain'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
