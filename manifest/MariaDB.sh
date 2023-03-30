@@ -8,6 +8,7 @@ sudo /etc/init.d/mysql start &&
 pip install mysql-connector-python
 
 # Configuration de la base de données
+sudo mysql -e "UPDATE mysql.user SET Password = PASSWORD('ondongoa') WHERE User = 'root'"
 mysql -u root -pondongoa -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' IDENTIFIED BY 'ondongoa' WITH GRANT OPTION; FLUSH PRIVILEGES;"
 mysql -u root -pondongoa -e "create database identity; create database config_generator;"
 mysql -u root -pondongoa -e "use identity; create table users(user_id INTEGER auto_increment PRIMARY KEY, user_nom VARCHAR(255) not null, user_prenom VARCHAR(255) not null, user_date DATE not null)ENGINE=InnoDB; create table usernames(user_id INTEGER auto_increment PRIMARY KEY, username VARCHAR(255) not null, password VARCHAR(255) not null)ENGINE=InnoDB;"
