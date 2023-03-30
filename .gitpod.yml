@@ -1,4 +1,4 @@
-image: gitpod/workspace/univ-smb-flask-full
+image: gitpod/workspace-python
 
 ports:
   - port: 5000
