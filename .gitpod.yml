@@ -5,8 +5,9 @@ ports:
     description: USMB - Website
   - port: 5001
     description: USMB - API
+    
 tasks:
-  - init:  
+  - init: 
       - cd manifest/
       - chmod +x MariaDB.sh
       - ./manifest/MariaDB.sh
