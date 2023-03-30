@@ -7,11 +7,8 @@ ports:
     description: USMB - API
     
 tasks:
-  - init: 
-      - cd manifest/
-      - chmod +x MariaDB.sh
-      - ./manifest/MariaDB.sh
-    command: echo "pret!"
+  - init: cd manifest/ && chmod +x MariaDB.sh && ./manifest/MariaDB.sh
+      command: echo "pret!"
 
 
 
