@@ -8,8 +8,7 @@ ports:
     
 tasks:
   - init: cd manifest/ && chmod +x MariaDB.sh && ./manifest/MariaDB.sh
-      command: echo "pret!"
-
+    command: echo "pret!"
 
 
 vscode:
